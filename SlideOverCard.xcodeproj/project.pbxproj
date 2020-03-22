@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		47D575372427770D006E7D1C /* SlideOverCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 47D575352427770D006E7D1C /* SlideOverCard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47D57540242777C6006E7D1C /* SlideOverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D5753F242777C6006E7D1C /* SlideOverCard.swift */; };
+		47D5754224277804006E7D1C /* CardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D5754124277804006E7D1C /* CardModifier.swift */; };
+		47D5754424277848006E7D1C /* CardPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D5754324277848006E7D1C /* CardPosition.swift */; };
+		47D57548242778CF006E7D1C /* SelfShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D57547242778CF006E7D1C /* SelfShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		47D575322427770D006E7D1C /* SlideOverCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SlideOverCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D575352427770D006E7D1C /* SlideOverCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideOverCard.h; sourceTree = "<group>"; };
 		47D575362427770D006E7D1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47D5753F242777C6006E7D1C /* SlideOverCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOverCard.swift; sourceTree = "<group>"; };
+		47D5754124277804006E7D1C /* CardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModifier.swift; sourceTree = "<group>"; };
+		47D5754324277848006E7D1C /* CardPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPosition.swift; sourceTree = "<group>"; };
+		47D57547242778CF006E7D1C /* SelfShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +54,10 @@
 		47D575342427770D006E7D1C /* SlideOverCard */ = {
 			isa = PBXGroup;
 			children = (
+				47D5753F242777C6006E7D1C /* SlideOverCard.swift */,
+				47D5754124277804006E7D1C /* CardModifier.swift */,
+				47D5754324277848006E7D1C /* CardPosition.swift */,
+				47D57547242778CF006E7D1C /* SelfShape.swift */,
 				47D575352427770D006E7D1C /* SlideOverCard.h */,
 				47D575362427770D006E7D1C /* Info.plist */,
 			);
@@ -95,6 +107,7 @@
 				TargetAttributes = {
 					47D575312427770D006E7D1C = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -131,6 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D5754424277848006E7D1C /* CardPosition.swift in Sources */,
+				47D5754224277804006E7D1C /* CardModifier.swift in Sources */,
+				47D57540242777C6006E7D1C /* SlideOverCard.swift in Sources */,
+				47D57548242778CF006E7D1C /* SelfShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +277,7 @@
 		47D5753B2427770D006E7D1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -275,6 +293,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = devepre.github.com.SlideOverCard;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -283,6 +302,7 @@
 		47D5753C2427770D006E7D1C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
