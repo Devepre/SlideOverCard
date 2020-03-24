@@ -16,11 +16,11 @@ struct CardModifier<HandlerContent: View>: ViewModifier {
     
     @State private var startMovingPoint: CGFloat
     @State private var tweak: Bool = true
+    @State private var finishedDraging: Bool = true
     
     private var screenSizePublisher: AnyPublisher<CGSize, Never>
     private let handler: () -> HandlerContent
-    
-    @State private var finishedDraging: Bool = true
+    private let shadowRadius: CGFloat = 20.0
     
     init(cardDefinition: ObservedObject<CardDefinition>,
          contentWidth: Binding<CGFloat>,
@@ -43,12 +43,13 @@ struct CardModifier<HandlerContent: View>: ViewModifier {
         }
         .frame(width: contentWidth)
         .offset(x: 0, y: cardDefinition.offsetFromTop())
-            .clipShape(SelfShape()) // Need to clip in order to apply shadow for all views as one view
-            .shadow(color: .init(white: 0.8), radius: 20, x: 0, y: 0)
-            .animation(self.finishedDraging ? self.animation : nil)
-            .gesture(drag)
-            .onReceive(screenSizePublisher) { size in
-                self.startMovingPoint = self.cardDefinition.offsetFromTop(forNew: size.height)
+        .clipShape(SelfShape()) /* Need to clip in order to apply shadow for all views as one view */
+        .shadow(color: .init(white: 0.8), radius: shadowRadius, x: 0, y: 0)
+        .clipShape(SelfShape(additionalMargin: shadowRadius * 2))
+        .animation(self.finishedDraging ? self.animation : nil)
+        .gesture(drag)
+        .onReceive(screenSizePublisher) { size in
+            self.startMovingPoint = self.cardDefinition.offsetFromTop(forNew: size.height)
         }
         .onReceive(cardDefinition.$startPosition) { _ in
             guard self.finishedDraging else {
